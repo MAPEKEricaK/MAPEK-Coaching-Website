@@ -1601,3 +1601,38 @@ body.contact-page {
   .service-pills { gap: 8px; margin-bottom: 28px; }
   .service-pill { padding: 8px 16px; font-size: 0.78rem; }
 }
+
+/* ==========================================================================
+   Credentials strip (footer) — Credly badges
+   ========================================================================== */
+.credentials-strip {
+  padding: 28px 0 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 36px;
+  text-align: center;
+}
+
+.credentials-strip .eyebrow {
+  margin: 0 auto 18px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.credentials-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.credentials-grid > div {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 880px) {
+  .credentials-strip { padding-top: 22px; margin-top: 28px; }
+  .credentials-grid { gap: 10px; }
+}
