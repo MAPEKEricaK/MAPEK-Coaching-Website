@@ -534,7 +534,7 @@ a.btn.btn-secondary:hover {
 .services-band {
   margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   background: var(--stone-50);
   border: 1px solid var(--line);
@@ -559,10 +559,12 @@ a.btn.btn-secondary:hover {
   z-index: 1;
   padding: 38px 34px;
   border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   transition: background-color 0.3s ease;
 }
 
-.services-band article:last-child { border-right: none; }
+.services-band article:nth-child(2n) { border-right: none; }
+.services-band article:nth-last-child(-n+2) { border-bottom: none; }
 
 .services-band article:hover {
   background: rgba(184, 155, 209, 0.10);
@@ -1542,4 +1544,60 @@ body.contact-page {
   mix-blend-mode: multiply;
   mask-image: linear-gradient(180deg, black 0%, black 65%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, black 0%, black 65%, transparent 100%);
+}
+
+
+/* 4-card service grid (2x2 desktop, 1 column mobile) */
+.cards.four {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+@media (max-width: 880px) {
+  .cards.four {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   Service pills (home page — preview-section top row)
+   ========================================================================== */
+.service-pills {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 40px;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border: 1px solid rgba(110, 75, 150, 0.42);
+  border-radius: 999px;
+  color: var(--plum-700);
+  background: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.22s cubic-bezier(0.65, 0, 0.35, 1), background 0.22s ease, color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.service-pill:hover {
+  background: var(--plum-600);
+  color: #ffffff;
+  border-color: var(--plum-600);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(110, 75, 150, 0.20);
+}
+
+@media (max-width: 480px) {
+  .service-pills { gap: 8px; margin-bottom: 28px; }
+  .service-pill { padding: 8px 16px; font-size: 0.78rem; }
 }
